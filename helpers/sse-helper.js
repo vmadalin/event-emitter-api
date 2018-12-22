@@ -84,6 +84,7 @@ class ServerSendEvent {
             } else {
                 this.res.write('id: ' + ++this.id + '\n');
                 this.res.write('event: ' + name + '\n');
+                this.res.write('date: ' + JSON.stringify(new Date()) + '\n');
                 if (typeof data === 'string' || typeof data === 'number') {
                     this.res.write('data: ' + data + '\n\n');
                 } else if (typeof data === 'object') {
